@@ -1,0 +1,752 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    /* border: 1px solid red; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: rgb(15, 0, 30);
+    transition: 1s;
+   
+}
+:root{
+    --radius:10px;
+    --border:1px solid rgba(211, 211, 211, 0.489);
+}
+
+@media (min-width:990px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 90px;
+        padding: 20px;
+        top: 0;
+        position: fixed;
+        background-color: rgb(39, 7, 68);
+        z-index: 1;
+
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        
+    }
+
+    header ul li {
+        list-style: none;
+        float: left;
+    }
+
+    header .menu {
+        font-size: 7vmax;
+        display: none;
+    }
+    ul li a {
+        text-decoration: none;
+        margin-left: 5px;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.185);
+        padding: 5px 20px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.283);
+        position: relative;
+        overflow: hidden;
+        font-weight: bolder;
+    }
+    ul li a::after {
+        content: "";
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 100%;
+        transform: translate(-50%, -50%)scale(1);
+        border-radius: 10px;
+        position: absolute;
+        transition: .2s linear;
+        background-color: rgba(255, 255, 255, 0.194);
+        z-index: -1;
+    }
+    ul li a:hover::after {
+        width: 100%;
+        height: 100%;
+        transition: .2s linear;
+        transform: translate(-50%, -50%)scale(1);
+    }
+    section {
+        width: 90vw;
+        margin: 100px auto;
+        padding: 10px;
+        color: white;
+        text-align: center;
+        transition: 1s ease-in-out;
+    }
+    .profile {
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .profile .user-pic {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        transition: 1s;
+        filter: drop-shadow(1px 4px 6px rgba(255, 255, 255, 0.2));
+        animation: down .9s infinite 3;
+    }
+    @keyframes down {
+        0%{ transform: translateY(-50px);}
+        100%{transform: translateY(100px);}
+        
+    }
+    .profile .user-pic:hover{
+        transform: scale(1.1);
+        transition: 1s;
+    }
+    .profile h1 {
+        font-size: 5.5vmax;
+    }
+    .profile p {
+        font-size: 1.5vmax;
+    }
+
+    .about h1 {
+        text-align: left;
+        margin: 0px 10px;
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+
+    .about p {
+        text-align: justify;
+        font-size: 2vmax;
+        margin: 10px;
+    }
+
+    .education {
+        margin: 0px 10px;
+    }
+
+    .education h1 {
+        text-align: left;
+
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+
+    .education h2 {
+        text-align: left;
+        margin: 10px 0px;
+        font-size: 2.5vmax;
+
+
+    }
+
+    .education p {
+        text-align: justify;
+        font-size: 2vmax;
+    }
+
+    .study {
+        margin-bottom: 10px;
+    }
+    .skill-set{
+        margin: 0px 10px;
+    }
+    .skill-set h1{
+        text-align: left;
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+    .skill-set h2 {
+        text-align: left;
+        font-size: 2.5vmax;
+        margin: 5px 0px;
+    }
+    .skill-set p{
+        text-align: justify;
+        font-size: 2vmax;
+    }
+   
+    .project{
+         margin: 0 10px;
+         display: flex;
+         justify-content: space-between;
+         gap: 20px;
+         overflow-x: auto;
+    }
+    .card{
+        border: var(--border);
+        border-radius: var(--radius);
+        width: 100%;
+        height: 100%; 
+        flex-shrink: 0;
+        padding: 40px;
+    }
+    .card:hover{
+        transform: scale(0.95);
+        transition: .4s;
+       }
+    .card h2{
+        font-size: 3.9vmax;
+        margin-bottom: 5px;
+       }
+       .card p{
+        text-align: justify;
+        font-size: 2vmax;
+        margin: 5px;
+        
+       }
+       #projects h1{
+        text-align: left;
+        font-size: 5vmax;
+        color:rgb(128, 12, 236) ;
+        margin: 10px 10px;
+       }
+       #contact h1{
+        font-size: 5vmax;
+        text-align: center;
+        margin: 5px 10px;
+        color: rgb(128, 12, 236);
+       }
+       #contact button{
+        border: none;
+        font-size: 3vmax;
+        text-align: center;
+        background-color: rgb(30, 6, 45);
+        margin: 40px ;
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: white;
+       }
+       .contacts{
+        margin: 0px 10px;
+       }
+       .link{
+           
+           border-radius: var(--radius);
+           width: 100%;
+           height: 100px; 
+           display: flex;
+           align-items: center;
+           justify-content: space-around;
+           margin: 0px auto;
+           padding:  10px;
+    
+       }
+      .link a{
+        font-size: 5vmax;
+      }
+      .link a:hover{
+        color: white;
+        transition: .5s;
+        transform: scale(1.1);
+      }
+      #contact button{
+        border: none;
+        font-size: 3vmax;
+        text-align: center;
+        background-color: rgb(30, 6, 45);
+        margin: 40px ;
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: white;
+       }
+      #contact button:hover{
+        transform: scale(1.15);
+        transition: 1s;
+       }
+    
+   
+    
+   
+}
+
+@media (min-width:500px) and (max-width:990px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 90px;
+        padding: 40px;
+        top: 0;
+        position: fixed;
+        background-color: rgb(39, 7, 68);
+        z-index: 1;
+
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    ul li {
+        list-style: none;
+        float: left;
+    }
+
+    header .menu {
+        font-size: 7vmax;
+        display: none;
+    }
+
+    ul li a {
+        text-decoration: none;
+        margin-left: 5px;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.185);
+        padding: 5px 20px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.283);
+        position: relative;
+        overflow: hidden;
+        font-weight: bolder;
+    }
+
+    ul li a::after {
+        content: "";
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 100%;
+        transform: translate(-50%, -50%)scale(1);
+        border-radius: 10px;
+        position: absolute;
+        transition: .2s linear;
+        background-color: rgba(255, 255, 255, 0.194);
+        z-index: -1;
+    }
+
+    ul li a:hover::after {
+        width: 100%;
+        height: 100%;
+        transition: .2s linear;
+        transform: translate(-50%, -50%)scale(1);
+    }
+
+    section {
+        width: 90vw;
+
+        margin: 100px auto;
+        padding: 10px;
+        color: white;
+        text-align: center;
+    }
+
+    .profile {
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .profile .user-pic {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        transition: 1s;
+        filter: drop-shadow(1px 4px 6px rgba(255, 255, 255, 0.2));
+    }
+    .profile .user-pic:hover{
+        transform: scale(1.1);
+        transition: 1s;
+    }
+
+    .profile h1 {
+        font-size: 5.5vmax;
+    }
+
+    .profile p {
+        font-size: 2vmax;
+    }
+
+    .about h1 {
+        text-align: left;
+        margin: 0px 10px;
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+
+    .about p {
+        text-align: justify;
+        font-size: 2vmax;
+        margin: 10px;
+    }
+
+    .education {
+        margin: 0px 10px;
+    }
+
+    .education h1 {
+        text-align: left;
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+
+    .education h2 {
+        text-align: left;
+        margin: 5px 0px;
+        font-size: 2.7vmax;
+
+    }
+
+    .education p {
+        text-align: justify;
+        font-size: 2vmax;
+    }
+
+    .study {
+        margin-bottom: 10px;
+    }
+    .skill-set{
+        margin: 0px 10px;
+    }
+    .skill-set h1{
+        text-align: left;
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+    .skill-set h2 {
+        text-align: left;
+        font-size: 2.7vmax;
+        margin: 5px 0px;
+    }
+    .skill-set p{
+        text-align: justify;
+        font-size: 2vmax;
+        margin:5px 0px ;
+    }
+    .project{
+        margin: 0 10px;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        overflow-x: auto;
+        flex-wrap: wrap;
+        
+   }
+   .card{
+       border: var(--border);
+       border-radius: var(--radius);
+       width: 100%;
+       height: 100%px; 
+       flex-shrink: 0;
+       flex: 0 1 calc(100% - 0px);
+       padding: 30px;
+   }
+   .card:hover{
+    transform: scale(0.95);
+    transition: .4s;
+   }
+   .card h2{
+    font-size: 4.5vmax;
+   }
+   .card p{
+    text-align: justify;
+    font-size: 2.6vmax;
+    margin: 10px 0px;
+   }
+   #projects h1{
+    text-align: left;
+    font-size: 5vmax;
+    color:rgb(128, 12, 236) ;
+    margin: 10px 10px;
+   }
+   #contact h1{
+    font-size: 5vmax;
+    text-align: center;
+    margin: 5px 10px;
+    color: rgb(128, 12, 236);
+   }
+   .contacts{
+    margin: 0px 10px;
+   }
+   .link{
+       
+       border-radius: var(--radius);
+       width: 100%;
+       height: 100px; 
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+       margin: 0px auto;
+       padding:  10px;
+
+   }
+  .link a{
+    font-size: 5vmax;
+  }
+  .link a:hover{
+    color: white;
+    transition: .5s;
+    transform: scale(1.1);
+  }
+  #contact button{
+    border: none;
+    font-size: 3vmax;
+    text-align: center;
+    background-color: rgb(30, 6, 45);
+    margin: 40px ;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+   }
+   #contact button:hover{
+    transform: scale(1.15);
+    transition: 1s;
+   }
+
+  
+}
+
+@media (max-width:540px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 90px;
+        padding: 20px;
+        top: 0;
+        position: fixed;
+        background-color: rgb(39, 7, 68);
+        z-index: 1;
+
+    }
+
+    img {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    ul li {
+        list-style: none;
+        float: left;
+        display: none;
+    }
+
+    ul li a {
+        text-decoration: none;
+        margin-left: 5px;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.185);
+        padding: 5px 20px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.283);
+        position: relative;
+        overflow: hidden;
+        font-weight: bolder;
+    }
+
+    header .menu {
+        font-size: 7vmax;
+    }
+
+    ul li a::after {
+        content: "";
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 100%;
+        transform: translate(-50%, -50%)scale(1);
+        border-radius: 10px;
+        position: absolute;
+        transition: .2s linear;
+        background-color: rgba(255, 255, 255, 0.194);
+        z-index: -1;
+    }
+
+    ul li a:hover::after {
+        width: 100%;
+        height: 100%;
+        transition: .2s linear;
+        transform: translate(-50%, -50%)scale(1);
+    }
+
+    section {
+        width: 90vw;
+
+        margin: 100px auto;
+        padding: 10px;
+        color: white;
+        text-align: center;
+    }
+
+    .profile {
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .profile .user-pic {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        transition: 1s;
+        filter: drop-shadow(0px 4px 6px rgba(255, 255, 255, 0.2));
+
+    }
+    .profile .user-pic:hover{
+        transform: scale(1.1);
+        transition: 1s;
+    }
+
+    .profile h1 {
+        font-size: 4.6vmax;
+    }
+
+    .profile h2 {
+        font-size: 2.5vmax;
+    }
+
+    .profile p {
+        font-size: 1.5vmax;
+    }
+
+    .about h1 {
+        text-align: left;
+        margin: 0px 10px;
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+
+    .about p {
+        text-align: justify;
+        font-size: 1.5vmax;
+        margin: 10px;
+    }
+
+    .education {
+        margin: 0px 10px;
+    }
+
+    .education h1 {
+        text-align: left;
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+
+    .education h2 {
+        text-align: left;
+        font-size: 2.5vmax;
+        margin: 5px 0px;
+
+    }
+
+    .education p {
+        text-align: justify;
+        font-size: 1.7vmax;
+    }
+
+    .study {
+        margin-bottom: 10px;
+    }
+    .skill-set{
+        margin: 0px 10px;
+    }
+    .skill-set h1{
+        text-align: left;
+        font-size: 5vmax;
+        color: rgb(128, 12, 236);
+    }
+    .skill-set h2 {
+        text-align: left;
+        font-size: 2.5vmax;
+        margin: 5px 0px;
+    }
+    .skill-set p{
+        text-align: justify;
+        font-size: 1.7vmax;
+    }
+    .project{
+        margin: 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        overflow-x: auto;
+   }
+   .card{
+       border: var(--border);
+       border-radius: var(--radius);
+       width: 100%;
+       height: 100%; 
+       flex-shrink: 0;
+       flex-wrap:wrap-reverse;
+       margin: 0 auto;
+       padding:  10px;
+      
+   }
+   .card:hover{
+    transform: scale(0.95);
+    transition: .4s;
+   }
+   .card h2{
+    font-size: 3.3vmax;
+   }
+   .card p{
+    text-align: justify;
+    font-size: 2vmax;
+    margin: 3px 0px;
+   }
+   #projects h1{
+    text-align: left;
+    font-size: 5vmax;
+    color:rgb(128, 12, 236) ;
+    margin: 5px 10px;
+   }
+   #contact h1{
+    font-size: 5vmax;
+    text-align: center;
+    margin: 5px 10px;
+    color: rgb(128, 12, 236);
+   }
+   .contacts{
+    margin: 0px 10px;
+   }
+   .link{
+       
+       border-radius: var(--radius);
+       width: 100%;
+       height: 100px; 
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+       margin: 0px auto;
+       padding:  10px;
+
+   }
+  .link a{
+    font-size: 5vmax;
+  }
+  .link a:hover{
+    color: white;
+    transition: .5s;
+    transform: scale(1.1);
+  }
+  #contact button{
+    border: none;
+    font-size: 3vmax;
+    text-align: center;
+    background-color: rgb(30, 6, 45);
+    margin: 40px ;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+   }
+   #contact button:hover{
+    transform: scale(1.15);
+    transition: 1s;
+   }
+
+
+}
